@@ -15,12 +15,17 @@ import signup from "./pages/signup";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import { blue, purple } from "@material-ui/core/colors";
 
+import axios from "axios";
+
 const theme = createMuiTheme({
   palette: {
     primary: blue,
     secondary: purple
   }
 });
+
+axios.defaults.baseURL =
+  "https://europe-west1-socialape-710af.cloudfunctions.net/api";
 
 class App extends Component {
   render() {
