@@ -7,12 +7,10 @@ import { Link } from "react-router-dom";
 
 // MUIII
 import Grid from "@material-ui/core/Grid";
-import {
-  Typography,
-  TextField,
-  Button,
-  CircularProgress
-} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const styles = {
   form: {
@@ -63,7 +61,7 @@ class login extends Component {
     axios
       .post("/login", userData)
       .then(res => {
-        console.log(res.data);
+        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`);
         this.setState({
           loading: false
         });
@@ -130,7 +128,9 @@ class login extends Component {
               disabled={loading}
             >
               Log In
-              {loading && <CircularProgress size={30} className={classes.progress} />}
+              {loading && (
+                <CircularProgress size={30} className={classes.progress} />
+              )}
             </Button>
             <br />
             <small>
