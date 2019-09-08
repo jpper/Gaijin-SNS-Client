@@ -97,4 +97,4 @@ StaticProfile.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(StaticProfile);
+export default withStyles(styles)(StaticProfile);

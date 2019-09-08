@@ -5,6 +5,8 @@ import Scream from "../components/scream/Scream";
 import StaticProfile from "../components/profile/StaticProfile";
 // MUI
 import Grid from "@material-ui/core/Grid";
+
+// Redux
 import { connect } from "react-redux";
 import { getUserData } from "../redux/actions/dataActions";
 
